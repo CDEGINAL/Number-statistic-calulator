@@ -1,69 +1,81 @@
-# Number-statistic-calulator
+# Number Statistics Calculator
 
 
-Number Statistics Application
-This Django application allows users to input numbers either through a form or file upload and calculates various statistics including sum, mean, median, mode, range, prime numbers, and Armstrong numbers.
-Setup Instructions
+## Prerequisites
+- Python 3.8 or higher
+- pip (Python package installer)
 
-Create a virtual environment and activate it:
+## Project Setup Steps
 
-bashCopypython -m venv venv
-source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+1. **Create Project Directory**
+   ```bash
+   mkdir number_statistics_project
+   cd number_statistics_project
+   ```
 
-Install required packages:
+2. **Create and Activate Virtual Environment**
+   
+   For macOS/Linux:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate
+   ```
 
-bashCopypip install django
+3. **Install Required Packages**
+   ```bash
+   pip install django
+   ```
 
-Navigate to the project directory and run migrations:
+4. **Create Django Project**
+   ```bash
+   django-admin startproject assignment
+   cd assignment
+   ```
 
-bashCopypython manage.py makemigrations
-python manage.py migrate
+5. **Create Statistics Application**
+   ```bash
+   python manage.py startapp statistics
+   ```
 
-Start the development server:
-
-bashCopypython manage.py runserver
-
-Open your web browser and visit: http://127.0.0.1:8000/
-
-Features
-
-Input numbers via text area (comma-separated)
-Upload file containing numbers (comma-separated)
-Cart showing count of unique numbers
-Calculation of various statistics:
-
-Sum
-Mean
-Median
-Mode
-Range
-Prime numbers
-Armstrong numbers
+6. **Copy Project Files**
+   - Copy all provided code files into their respective locations in the project structure
+   - Ensure all files maintain their proper directory structure as shown below:
 
 
+7. **Apply Database Migrations**
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
 
-Project Structure
-Copyassignment/
-├── manage.py
-├── assignment/
-│   ├── __init__.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-└── statistics/
-    ├── __init__.py
-    ├── admin.py
-    ├── apps.py
-    ├── forms.py
-    ├── models.py
-    ├── urls.py
-    ├── views.py
-    ├── templates/
-    │   └── statistics/
-    │       ├── base.html
-    │       ├── home.html
-    │       └── results.html
-    └── static/
-        └── statistics/
-            └── css/
-                └── style.css
+8. **Run Development Server**
+   ```bash
+   python manage.py runserver
+   ```
+
+9. **Access the Application**
+   - Open your web browser
+   - Navigate to: http://127.0.0.1:8000/
+
+## Using the Application
+
+1. **Homepage Features**
+   - Enter numbers directly in the text area (comma-separated)
+   - OR upload a file containing comma-separated numbers
+   - View the cart showing count of unique numbers entered
+
+2. **Submitting Numbers**
+   - Click the "Calculate Statistics" button after entering numbers
+   - You will be redirected to the Results page
+
+3. **Results Page Features**
+   Displays the following statistics:
+   - Unique Input Numbers
+   - Sum of all numbers
+   - Mean (average)
+   - Median (middle value)
+   - Mode (most frequent number)
+   - Range (difference between max and min)
+   - Prime numbers from the input
+   - Armstrong numbers from the input
+
